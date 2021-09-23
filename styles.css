@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+* {
+box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PT Sans', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    background-color: rgb(26, 40, 41);
+    height: 100vh;
+}
+h1 {
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    left: 10px;
+}
+h1:hover {
+    background-color: white;
+    color:rgb(26, 40, 41);
+    cursor: pointer;
+}
+.container {
+    width: 100%;
+    display: flex;
+    padding: 0 20px;
+}
+.slide {
+    display: inline;
+    flex-direction: column;
+    height: 85vh;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    margin: 1%;
+    flex: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transition: all 500ms ease-in-out;
+}
+.slide h3 {
+    position: absolute;
+    font-size: 2em;
+    bottom: 1em;
+    left: 1em;
+    margin: 0;
+    opacity: 0;
+}
+.slide.active {
+flex: 10;
+}
+.slide.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+
+@media screen and (max-width:700px) {
+
+    h1 {
+        display: none;
+    }
+    .slide {
+        display: inline;
+        flex-direction: column-reverse;
+        height: 50vh;
+        width: 50vw;
+    }
+}
